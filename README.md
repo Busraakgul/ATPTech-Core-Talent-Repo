@@ -4,8 +4,6 @@ A sophisticated **Camera Movement Detection System** that uses advanced computer
 
 **Try the app here:** [https://atptech-core-talent-repo-busraakgul.streamlit.app/](https://atptech-core-talent-repo-busraakgul.streamlit.app/)
 
-## 📸 Project Overview
-
 ## 📋 Overview
 
 This application analyzes sequences of images or video frames to detect significant camera movements such as panning, tilting, rotation, and shake. It employs a multi-method approach combining three different computer vision techniques for enhanced accuracy.

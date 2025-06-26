@@ -255,14 +255,6 @@ python test_movement_detection.py  # Run tests
 - **OpenCV Community**: For excellent computer vision libraries
 - **Streamlit Team**: For the amazing web app framework
 - **ATPTech**: For providing the challenge framework
-
-## 📞 Support
-
-For questions, issues, or suggestions:
-- 📧 Email: [busraakgul2017@gmail.com]
-- 🐛 Issues: [GitHub Issues](git clone https://github.com/Busraakgul/ATPTech-Core-Talent-Repo.git
-cd ATPTech-Core-Talent-Repo/camera-movement-detection)
-
 ---
 
 <div align="center">

@@ -177,31 +177,6 @@ This adaptive approach ensures both sensitivity to significant movements and rob
                     └──────────────────┘
 ```
 
-### Detection Methods
-
-#### 1. Frame Differencing
-- Calculates absolute differences between consecutive frames
-- Normalizes scores based on configurable threshold
-- Effective for detecting global camera movements
-
-#### 2. Feature Matching
-- Uses ORB (Oriented FAST and Rotated BRIEF) feature detector
-- FLANN-based matcher for efficient feature matching
-- Homography estimation for transformation analysis
-- Detects rotation, translation, and scaling
-
-#### 3. Optical Flow
-- Lucas-Kanade optical flow implementation
-- Tracks feature points across frames
-- Calculates motion vectors for movement quantification
-
-#### 4. Smart Fusion
-- Combines all methods using weighted averaging:
-  - Frame Differencing: 40%
-  - Feature Matching: 40%
-  - Optical Flow: 20%
-- Adaptive thresholding for movement classification
-
 ## 📊 Performance Metrics
 
 ### Accuracy Benchmarks
@@ -346,8 +321,5 @@ python test_movement_detection.py  # Run tests
 <div align="center">
 
 **Built with ❤️ for Computer Vision Enthusiasts**
-
-[⭐ Star this repository](git clone https://github.com/Busraakgul/ATPTech-Core-Talent-Repo.git
-cd ATPTech-Core-Talent-Repo/camera-movement-detection) if you find it helpful!
 
 </div>

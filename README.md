@@ -232,26 +232,37 @@ camera-movement-detection/
 └── test_images/             # Sample test images (optional)
 ```
 
-## 🎯 Use Cases
 
-### Professional Applications
-- **Film & Video Production**: Camera shake detection
-- **Security Systems**: Surveillance camera monitoring
-- **Drone Operations**: Flight stability analysis
-- **Medical Imaging**: Motion artifact detection
+## 📊 Example Usage
 
-### Research & Development
-- **Computer Vision**: Movement analysis algorithms
-- **Robotics**: Visual odometry applications
-- **Augmented Reality**: Camera tracking systems
-- **Motion Studies**: Behavioral analysis
+### Input Methods
 
-## 🚀 Deployment Options
+1. **Multiple Images**: Upload sequential image files (JPG, PNG, BMP)
+2. **Video File**: Upload video files (MP4, AVI, MOV, MKV)
+3. **ZIP Archive**: Upload a ZIP file containing image sequences
 
-### Local Development
-```bash
-streamlit run app.py
-```
+### Sample Output
+
+The application provides:
+- **Movement Detection Results**: List of frames with detected movement
+- **Confidence Scores**: Numerical scores for each frame
+- **Method Comparison**: Individual scores from each detection method
+- **Visual Charts**: Interactive plots showing movement patterns
+- **Frame Display**: Visual representation of detected movement frames
+
+### Example Screenshots
+
+#### Main Interface
+![input 1](https://github.com/user-attachments/assets/e1a45d2f-a1fc-4c6c-b046-ddf047dc06ea)
+
+
+#### Detection Results
+![input 2](https://github.com/user-attachments/assets/149bea5f-c4e3-454d-9bfc-9136fdb67955)
+
+![input3](https://github.com/user-attachments/assets/7956f455-8a62-4a02-b335-2d7f8b076a6d)
+
+#### Movement Visualization
+![input4](https://github.com/user-attachments/assets/6857ddee-1aac-4f0f-9d36-f5a6c67f3ffe)
 
 ### Streamlit Cloud
 1. Push code to GitHub
@@ -263,44 +274,6 @@ streamlit run app.py
 2. Upload project files
 3. Configure Streamlit runtime
 
-### Docker Deployment
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py"]
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Issue**: "No module named 'cv2'"
-```bash
-pip install opencv-python
-```
-
-**Issue**: "Insufficient frames for analysis"
-- Ensure at least 2 frames are uploaded
-- Check video file format compatibility
-
-**Issue**: "Low detection accuracy"
-- Adjust sensitivity thresholds
-- Verify image sequence order
-- Check for sufficient visual features
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch
-3. Implement your changes
-4. Add comprehensive tests
-5. Submit a pull request
 
 ### Development Setup
 ```bash

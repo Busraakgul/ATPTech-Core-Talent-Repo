@@ -175,44 +175,6 @@ def load_images(uploaded_files) -> List[np.ndarray]:
     
     return frames
 
-# def extract_frames_from_video(uploaded_video) -> List[np.ndarray]:
-    """Extract frames from uploaded video file"""
-    frames = []
-    
-    # Create a temporary file
-    tfile = tempfile.NamedTemporaryFile(delete=False, suffix='.mp4')
-    tfile.write(uploaded_video.read())
-    tfile.close()
-    
-    try:
-        cap = cv2.VideoCapture(tfile.name)
-        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        
-        # Sample frames if there are too many
-        sample_rate = max(1, total_frames // 50)  # Maximum 50 frames
-        
-        progress_bar = st.progress(0)
-        frame_count = 0
-        
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
-                
-            if frame_count % sample_rate == 0:
-                frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-                
-            frame_count += 1
-            progress_bar.progress(min(frame_count / total_frames, 1.0))
-        
-        cap.release()
-        
-    except Exception as e:
-        st.error(f"❌ Error processing video: {str(e)}")
-    finally:
-        os.unlink(tfile.name)
-    
-    return frames
 
 
 
@@ -334,7 +296,8 @@ def load_images_from_zip(uploaded_zip) -> List[np.ndarray]:
     return frames
 
 def display_results(result: dict, frames: List[np.ndarray],
-                   show_detailed: bool, show_frames: bool, max_frames: int):
+                   show_detailed: bool, show_frames: bool, max_frames: int,
+                   show_all_frames: bool = False, max_all_frames: int = 20):
     """Visualize the detection results"""
 
     movement_indices = result["movement_indices"]
@@ -372,7 +335,37 @@ def display_results(result: dict, frames: List[np.ndarray],
     # Show movement frames
     if show_frames and movement_indices:
         show_movement_frames(frames, movement_indices[:max_frames])
+    
+    # YENI: Tüm frameleri göster seçeneği
+    if show_all_frames:
+        show_all_frames_display(frames[:max_all_frames])
+        
+        
+def show_all_frames_display(frames: List[np.ndarray]):
+    """Display all frames"""
+    st.subheader("🖼️ All Frames")
+    
+    if not frames:
+        st.info("No frames to display.")
+        return
 
+    # Show in grid
+    cols_per_row = 4
+    for i in range(0, len(frames), cols_per_row):
+        cols = st.columns(cols_per_row)
+
+        for j, col in enumerate(cols):
+            idx = i + j
+            if idx < len(frames):
+                with col:
+                    st.image(
+                        frames[idx],
+                        caption=f"Frame {idx + 1}",
+                        use_container_width=True
+                    )       
+        
+        
+        
 
 def create_movement_chart(scores: List[float], movement_indices: List[int], method_results: dict):
     """Create the movement score chart"""

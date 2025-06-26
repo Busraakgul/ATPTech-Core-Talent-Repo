@@ -3,15 +3,10 @@ import numpy as np
 from typing import List, Tuple, Dict, Optional
 import logging
 
-# Logging yapılandırması
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class MovementDetector:
-    """
-    Gelişmiş kamera hareketi algılama sınıfı.
-    Birden fazla tekniği birleştirerek daha doğru sonuçlar elde eder.
-    """
     
     def __init__(self, 
                  diff_threshold: float = 30.0,
@@ -36,9 +31,6 @@ class MovementDetector:
         self.flann = cv2.FlannBasedMatcher(index_params, search_params)
         
     def detect_significant_movement(self, frames: List[np.ndarray]) -> Dict:
-        """
-        Ana fonksiyon: Kamera hareketini algılar
-        """
         if len(frames) < 2:
             return {"movement_indices": [], "scores": [], "method_results": {}}
             

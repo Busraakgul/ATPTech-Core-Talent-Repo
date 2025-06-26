@@ -110,11 +110,6 @@ This adaptive approach ensures both sensitivity to significant movements and rob
 - **Interactive Visualization**: Enables users to understand detection logic
 - **Flexible Input Support**: Accommodates various use cases and workflows
 
-## 🔗 Links
-
-- **📱 Live Application**: [https://atptech-core-talent-repo-busraakgul.streamlit.app/](https://atptech-core-talent-repo-busraakgul.streamlit.app/)
-- **📂 GitHub Repository**: [https://github.com/Busraakgul/ATPTech-Core-Talent-Repo](https://github.com/Busraakgul/ATPTech-Core-Talent-Repo)
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -235,7 +230,6 @@ camera-movement-detection/
 └── test_images/             # Sample test images (optional)
 ```
 
-
 ## 📊 Example Usage
 
 ### Input Methods
@@ -271,11 +265,6 @@ The application provides:
 1. Push code to GitHub
 2. Connect to Streamlit Cloud
 3. Deploy with automatic updates
-
-### Hugging Face Spaces
-1. Create new Space
-2. Upload project files
-3. Configure Streamlit runtime
 
 
 ### Development Setup

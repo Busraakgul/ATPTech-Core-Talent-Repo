@@ -74,43 +74,46 @@ This adaptive approach ensures both sensitivity to significant movements and rob
 - Visualization preferences
 - Performance optimization settings
 
-## 💪 Challenges and Solutions
 
-### Challenge 1: False Positive Reduction
-**Problem**: Single-method approaches often produce false positives due to lighting changes or noise.
+## 🚧 Challenges and Assumptions
 
-**Solution**: Implemented a multi-method fusion approach where at least two methods must agree for movement detection, significantly reducing false positives while maintaining sensitivity.
+### 🔧 Technical Challenges
 
-### Challenge 2: Computational Efficiency
-**Problem**: Processing high-resolution video frames in real-time requires optimization.
+1. **⚖️ Multi-method Fusion**
+   - **Challenge**: Balancing different algorithm outputs with varying scales
+   - **Solution**: Implemented weighted scoring with normalized outputs
 
-**Solution**: 
-- Implemented smart frame sampling for long videos (max 50 frames)
-- Used efficient feature detection with limited keypoints (1000 max)
-- Applied FLANN-based matching for faster feature correspondence
+2. **🎯 Adaptive Thresholding**
+   - **Challenge**: Setting universal thresholds for diverse content types
+   - **Solution**: Developed adaptive threshold system based on multiple criteria
 
-### Challenge 3: Handling Different Movement Types
-**Problem**: Different types of camera movements (shake, pan, rotation) require different detection approaches.
+3. **⚡ Performance Optimization**
+   - **Challenge**: Real-time processing of high-resolution videos
+   - **Solution**: Implemented frame sampling and optimized OpenCV operations
 
-**Solution**: Combined complementary methods where each excels at different movement types:
-- Frame differencing for shake and rapid movements
-- Feature matching for precise geometric transformations
-- Optical flow for smooth tracking movements
+4. **🎨 Feature Matching Robustness**
+   - **Challenge**: Handling scenes with few distinctive features
+   - **Solution**: Combined multiple feature detectors with fallback mechanisms
 
-### Challenge 4: Parameter Sensitivity
-**Problem**: Fixed thresholds don't work well for all scenarios.
+### 📋 Key Assumptions
 
-**Solution**: Implemented adaptive thresholding system that considers multiple methods and uses both high and medium threshold levels for flexible detection.
+1. **📸 Sequential Input**: Images/frames are provided in chronological order
+2. **🎥 Camera-centric Movement**: Focus on camera movement rather than object movement
+3. **📏 Reasonable Resolution**: Input images are at least 320x240 pixels
+4. **🎬 Video Quality**: Input videos have reasonable quality (not heavily compressed)
+5. **⏱️ Temporal Consistency**: Frame rate allows for meaningful motion analysis
 
+### 🎯 Design Decisions
 
-## 🔧 Assumptions
+- **Multi-method Approach**: Increases reliability over single-method detection
+- **Streamlit Framework**: Provides rapid development and deployment
+- **Interactive Visualization**: Enables users to understand detection logic
+- **Flexible Input Support**: Accommodates various use cases and workflows
 
-1. **Sequential Input**: Images are provided in chronological order
-2. **Sufficient Features**: Scenes contain enough visual features for matching (works poorly with blank walls or uniform textures)
-3. **Reasonable Resolution**: Input images have sufficient resolution for feature detection (minimum 320x240 recommended)
-4. **Camera-Only Movement**: Algorithm is optimized for camera movement rather than object movement within the scene
-5. **Stable Lighting**: Works best with consistent lighting conditions between frames
+## 🔗 Links
 
+- **📱 Live Application**: [https://atptech-core-talent-repo-busraakgul.streamlit.app/](https://atptech-core-talent-repo-busraakgul.streamlit.app/)
+- **📂 GitHub Repository**: [https://github.com/Busraakgul/ATPTech-Core-Talent-Repo](https://github.com/Busraakgul/ATPTech-Core-Talent-Repo)
 
 ## 🚀 Quick Start
 

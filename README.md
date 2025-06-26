@@ -259,10 +259,9 @@ python test_movement_detection.py  # Run tests
 ## 📞 Support
 
 For questions, issues, or suggestions:
-- 📧 Email: [your-email@example.com]
+- 📧 Email: [busraakgul2017@gmail.com]
 - 🐛 Issues: [GitHub Issues](git clone https://github.com/Busraakgul/ATPTech-Core-Talent-Repo.git
 cd ATPTech-Core-Talent-Repo/camera-movement-detection)
-- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/camera-movement-detection/discussions)
 
 ---
 

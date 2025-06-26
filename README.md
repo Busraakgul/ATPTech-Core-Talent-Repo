@@ -1,5 +1,7 @@
 A sophisticated **Camera Movement Detection System** that uses advanced computer vision techniques to identify significant camera movements in image sequences and videos. This system combines multiple detection methods for enhanced accuracy and reliability.
 
+## Application Web URL in Streamlit : https://atptech-core-talent-repo-busraakgul.streamlit.app/
+
 ## 📸 Project Overview
 
 This project implements an intelligent camera movement detection system that combines three powerful computer vision techniques:
